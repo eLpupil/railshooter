@@ -1,20 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //ok as long as this is the only script that will load scenes
 
 public class CollisionHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("In seconds")][SerializeField] float loadSceneDelay = 1.5f;
+    [Tooltip("FX Prefab on player")][SerializeField] GameObject deathFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,5 +26,12 @@ public class CollisionHandler : MonoBehaviour
     private void StartDeathSequence()
     {
         SendMessage("OnPlayerDeath");
+        deathFX.SetActive(true);
+        Invoke("LoadScene1", loadSceneDelay);
+    }
+
+    private void LoadScene1() //referenced in a string
+    {
+        SceneManager.LoadScene(1);
     }
 }
