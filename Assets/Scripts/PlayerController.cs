@@ -2,25 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-
-    [Tooltip("In ms^-1")][SerializeField] float xSpeed = 75f;
-    [Tooltip("In m")][SerializeField] float xRange = 20f;
-
-    [Tooltip("In ms^-1")][SerializeField] float ySpeed = 75f;
-    [Tooltip("In m")][SerializeField] float yRange = 12;
-
     float xThrow, yThrow;
 
+    [Header("General")]
+    [Tooltip("In ms^-1")][SerializeField] float xSpeed = 75f;
+    [Tooltip("In ms^-1")] [SerializeField] float ySpeed = 75f;
 
+    
+    [Tooltip("In m")][SerializeField] float xRange = 20f;
+    [Tooltip("In m")][SerializeField] float yRange = 12;
+
+
+    [Header("Screen-Position Parameters")]
     [SerializeField] float positionPitchFactor = -1.5f;
-    [SerializeField] float throwPitchFactor = -20f;
-
     [SerializeField] float positionYawFactor = 1.2f;
 
+    [Header("Control-Throw Parameters")]
+    [SerializeField] float throwPitchFactor = -20f;
     [SerializeField] float throwRollFactor = -20f;
+
+    bool controlEnabled = true;
 
 
     // Start is called before the first frame update
@@ -32,26 +37,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if (controlEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
+        
     }
 
-    private void ProcessRotation()
+    void OnPlayerDeath() // called by a string reference
     {
-        float pitch = 0f;
-        float yaw = 0f;
-        float roll = 0f;
-
-
-        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
-        float pitchDueToThrow = yThrow * throwPitchFactor;
-        pitch = pitchDueToPosition + pitchDueToThrow;
-
-        yaw = transform.localPosition.x * positionYawFactor;
-
-        roll = xThrow * throwRollFactor;
-
-        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+        controlEnabled = false;
     }
 
     private void ProcessTranslation()
@@ -70,4 +66,22 @@ public class Player : MonoBehaviour
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
+    private void ProcessRotation()
+    {
+        float pitch = 0f;
+        float yaw = 0f;
+        float roll = 0f;
+
+
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToThrow = yThrow * throwPitchFactor;
+        pitch = pitchDueToPosition + pitchDueToThrow;
+
+        yaw = transform.localPosition.x * positionYawFactor;
+
+        roll = xThrow * throwRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
 }
