@@ -472,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!1 &606505503
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!1 &677321579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4684783111177725254, guid: b21813f0ba94aa04ba0aaff46e58c767,
@@ -611,11 +613,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 2805187914493828798, guid: c3f7a000e3123564ba4ec26fd3e07737,
     type: 3}
   m_PrefabInstance: {fileID: 2805187914056772644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &883685713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6224733084073409485, guid: c3e457234bb4e9e4489741ef013fd116,
+    type: 3}
+  m_PrefabInstance: {fileID: 8203397801601106644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
@@ -722,6 +731,12 @@ MonoBehaviour:
   progressStyle: 0
   pointToPointThreshold: 4
   target: {fileID: 963194228}
+--- !u!1 &989269964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8237419015023515520, guid: c3e457234bb4e9e4489741ef013fd116,
+    type: 3}
+  m_PrefabInstance: {fileID: 8203397801601106644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1020158251
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed177c7820cf35b4dabd37b1afa5485f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsOnHit: 100
 --- !u!1001 &1151242441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -967,6 +981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!4 &1194270917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7293930415988934180, guid: 629fdd3960c69d64fa299e179e01a7d6,
@@ -1318,6 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!1 &2111397664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 3946000881361939327, guid: 9f8ad0acfbacda74db462fa1ffb4e1d4, type: 3}
   parent: {fileID: 513879228}
+  pointsOnHit: 100
 --- !u!1001 &2146370341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1773,6 +1790,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6224733084073409485, guid: c3e457234bb4e9e4489741ef013fd116,
+        type: 3}
+      propertyPath: m_Name
+      value: GunL
+      objectReference: {fileID: 0}
     - target: {fileID: 6635785333298798739, guid: c3e457234bb4e9e4489741ef013fd116,
         type: 3}
       propertyPath: TriggerModule.enabled
@@ -1833,10 +1855,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8203397801656684374, guid: c3e457234bb4e9e4489741ef013fd116,
+        type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203397801656684374, guid: c3e457234bb4e9e4489741ef013fd116,
+        type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 989269964}
+    - target: {fileID: 8203397801656684374, guid: c3e457234bb4e9e4489741ef013fd116,
+        type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 883685713}
     - target: {fileID: 8204731127248284568, guid: c3e457234bb4e9e4489741ef013fd116,
         type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237419015023515520, guid: c3e457234bb4e9e4489741ef013fd116,
+        type: 3}
+      propertyPath: m_Name
+      value: GunR
       objectReference: {fileID: 0}
     - target: {fileID: 8657196853245431006, guid: c3e457234bb4e9e4489741ef013fd116,
         type: 3}

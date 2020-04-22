@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float throwPitchFactor = -20f;
     [SerializeField] float throwRollFactor = -20f;
 
+    [Header("Weapons")]
+    [SerializeField] GameObject[] guns;
+
     bool controlEnabled = true;
 
 
@@ -41,14 +45,10 @@ public class PlayerController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
-        
     }
 
-    void OnPlayerDeath() // called by a string reference
-    {
-        controlEnabled = false;
-    }
 
     private void ProcessTranslation()
     {
@@ -84,4 +84,38 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
+    private void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeActivateGuns();
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    private void DeActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
+    }
+
+ 
+    void OnPlayerDeath() // called by a string reference
+    {
+        controlEnabled = false;
+        DeActivateGuns();
+    }
 }
