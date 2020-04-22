@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform parent;
     private void OnParticleCollision(GameObject other)
     {
-        print("particle collision");
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         Destroy(gameObject);
