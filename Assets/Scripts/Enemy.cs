@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Death FX")]
     [Tooltip("FX Prefab on enemy")] [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
 
+    [Header("Points")]
     [SerializeField] int scorePerHit = 10;
     [SerializeField] int hitPoints = 10;
     ScoreBoard scoreBoard;
+
+    [Header("Sound FX")]
+    [SerializeField] AudioClip impactAudio;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         AddBoxCollider();
         scoreBoard = FindObjectOfType<ScoreBoard>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void AddBoxCollider()
@@ -38,8 +46,9 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
+        audioSource.PlayOneShot(impactAudio);
         hitPoints = hitPoints - 1;
-        scoreBoard.scoreHit(scorePerHit);
+        scoreBoard.scorePerHit(scorePerHit);
     }
 
     private void DestroyEnemy()

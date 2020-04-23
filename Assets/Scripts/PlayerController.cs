@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessFiring()
     {
+        //add sound FX
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
             ActivateGuns();
