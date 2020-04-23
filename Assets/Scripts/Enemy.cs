@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
     [Tooltip("FX Prefab on enemy")] [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
 
-    [SerializeField] int pointsOnHit = 100;
+    [SerializeField] int scorePerHit = 10;
+    [SerializeField] int hitPoints = 10;
     ScoreBoard scoreBoard;
 
     // Start is called before the first frame update
@@ -26,18 +27,26 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        ProcessHit();
+
+        if (hitPoints < 1)
+        {
+            DestroyEnemy();
+        }
+
+    }
+
+    private void ProcessHit()
+    {
+        hitPoints = hitPoints - 1;
+        scoreBoard.scoreHit(scorePerHit);
+    }
+
+    private void DestroyEnemy()
+    {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         Destroy(gameObject);
-        scoreBoard.scoreHit(pointsOnHit);
     }
 
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
