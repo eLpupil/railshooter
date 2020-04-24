@@ -27,11 +27,9 @@ public class PlayerController : MonoBehaviour
 
     bool controlEnabled = true;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -98,10 +96,13 @@ public class PlayerController : MonoBehaviour
         {
             var gunEmissionModule = gun.GetComponent<ParticleSystem>().emission;
             gunEmissionModule.enabled = isActive;
+
+            AudioSource audioSource = gun.GetComponent<AudioSource>();
+            audioSource.enabled = isActive;
         }
     }
 
- 
+
     void OnPlayerDeath() // called by a string reference
     {
         controlEnabled = false;
