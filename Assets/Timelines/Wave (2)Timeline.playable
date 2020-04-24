@@ -69,8 +69,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 10.083333
-        value: {x: 0.89, y: -12.54, z: -0.024999976}
+        time: 8.7
+        value: {x: 0.89, y: -12.54, z: 0.57705444}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -104,7 +104,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 10.083333
+    m_StopTime: 8.7
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -133,7 +133,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.083333
+        time: 8.7
         value: 0.89
         inSlope: 0
         outSlope: 0
@@ -161,7 +161,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.083333
+        time: 8.7
         value: -12.54
         inSlope: 0
         outSlope: 0
@@ -189,8 +189,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.083333
-        value: -0.024999976
+        time: 8.7
+        value: 0.57705444
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -219,29 +219,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
   m_Name: Markers
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
---- !u!114 &-3476987116225918894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
-  m_Name: Track Group
   m_EditorClassIdentifier: 
   m_Version: 3
   m_AnimClip: {fileID: 0}
@@ -312,7 +289,6 @@ MonoBehaviour:
   - {fileID: -3241061322080272197}
   - {fileID: 6735409958432327232}
   - {fileID: -7558618221461633285}
-  - {fileID: -3476987116225918894}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -347,16 +323,25 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4.2
-        value: {x: 0.10394883, y: -4.1717944, z: 0.017394185}
-        inSlope: {x: 0.112797126, y: -1.6074039, z: 0.02867804}
-        outSlope: {x: 0.112797126, y: -1.6074039, z: 0.02867804}
+        value: {x: 0.10394883, y: -4.1717944, z: 0.23462221}
+        inSlope: {x: 0.112797126, y: -1.6074039, z: 0.11235662}
+        outSlope: {x: 0.112797126, y: -1.6074039, z: 0.11235662}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 10.133333
+        value: {x: 1.5899704, y: -11.211909, z: 0.7249092}
+        inSlope: {x: 0.0035564082, y: -0.010862687, z: 0}
+        outSlope: {x: 0.0035564082, y: -0.010862687, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 10.15
-        value: {x: 1.59, y: -11.212, z: 0.143}
+        value: {x: 1.59, y: -11.212, z: 0.7249092}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -484,8 +469,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.15
-        value: 0.143
+        time: 10.133333
+        value: 0.7249092
         inSlope: 0
         outSlope: 0
         tangentMode: 136
