@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using UnityEngine.SceneManagement;
-using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -88,27 +84,20 @@ public class PlayerController : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
-            ActivateGuns();
+            SetGunsActive(true);
         }
         else
         {
-            DeActivateGuns();
+            SetGunsActive(false);
         }
     }
 
-    private void ActivateGuns()
+    private void SetGunsActive(bool isActive)
     {
         foreach (GameObject gun in guns)
         {
-            gun.SetActive(true);
-        }
-    }
-
-    private void DeActivateGuns()
-    {
-        foreach (GameObject gun in guns)
-        {
-            gun.SetActive(false);
+            var gunEmissionModule = gun.GetComponent<ParticleSystem>().emission;
+            gunEmissionModule.enabled = isActive;
         }
     }
 
@@ -116,6 +105,6 @@ public class PlayerController : MonoBehaviour
     void OnPlayerDeath() // called by a string reference
     {
         controlEnabled = false;
-        DeActivateGuns();
+        SetGunsActive(false);
     }
 }
