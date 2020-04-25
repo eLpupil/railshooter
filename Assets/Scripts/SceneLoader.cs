@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
-    [SerializeField] float loadSceneDelay = 5f;
-
-    // Start is called before the first frame update
-    void Start()
+    // Update is called once per frame
+    void Update()
     {
-        Invoke("LoadFirstScene", loadSceneDelay);
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            LoadFirstScene();
+        }
     }
 
     private void LoadFirstScene()
@@ -19,9 +20,5 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+
 }
