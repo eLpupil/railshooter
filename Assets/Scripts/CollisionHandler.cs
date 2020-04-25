@@ -42,11 +42,10 @@ public class CollisionHandler : MonoBehaviour
 
     private void StartDeathSequence()
     {
-        if (!Debug.isDebugBuild)
-            SendMessage("OnPlayerDeath");
-            deathFX.SetActive(true);
-            jetParticles.SetActive(false);
-            Invoke("LoadScene0", loadSceneDelay);
+        SendMessage("OnPlayerDeath");
+        deathFX.SetActive(true);
+        jetParticles.SetActive(false);
+        Invoke("LoadScene0", loadSceneDelay);
     }
 
     private void LoadScene0() //referenced in a string
