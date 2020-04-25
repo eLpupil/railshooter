@@ -41,7 +41,12 @@ public class Enemy : MonoBehaviour
         {
             DestroyEnemy();
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("enemy hit terrain");
+        DestroyEnemy();
     }
 
     private void ProcessHit()
