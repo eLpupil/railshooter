@@ -4215,6 +4215,12 @@ PlayableDirector:
     value: {fileID: 1213495979}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &2013917035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3286491535218877650, guid: c3e457234bb4e9e4489741ef013fd116,
+    type: 3}
+  m_PrefabInstance: {fileID: 8203397801601106644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041447358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963194228}
     m_Modifications:
+    - target: {fileID: 882802018, guid: c3e457234bb4e9e4489741ef013fd116, type: 3}
+      propertyPath: jetParticles
+      value: 
+      objectReference: {fileID: 2013917035}
     - target: {fileID: 3247577640989676980, guid: c3e457234bb4e9e4489741ef013fd116,
         type: 3}
       propertyPath: InitialModule.startSize.scalar

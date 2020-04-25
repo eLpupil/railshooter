@@ -7,6 +7,7 @@ public class CollisionHandler : MonoBehaviour
 {
     [Tooltip("In seconds")][SerializeField] float loadSceneDelay = 1.5f;
     [Tooltip("FX Prefab on player")][SerializeField] GameObject deathFX;
+    [SerializeField] GameObject jetParticles;
 
     bool collisionDisabled = false;
 
@@ -44,6 +45,7 @@ public class CollisionHandler : MonoBehaviour
         if (!Debug.isDebugBuild)
             SendMessage("OnPlayerDeath");
             deathFX.SetActive(true);
+            jetParticles.SetActive(false);
             Invoke("LoadScene1", loadSceneDelay);
     }
 
